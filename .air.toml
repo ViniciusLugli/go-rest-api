@@ -1,0 +1,34 @@
+# Configurações gerais
+root = "."
+tmp_dir = "tmp"
+
+[build]
+# Comando para construir sua aplicação
+cmd = "go build -o ./tmp/main ."
+# Binário que será executado
+bin = "tmp/main"
+# Extensões de arquivo para observar
+include_ext = ["go", "tpl", "tmpl", "html"]
+# Diretórios para ignorar
+exclude_dir = ["assets", "tmp", "vendor"]
+# Adicionar um pequeno atraso antes de reconstruir
+delay = 1000 # ms
+# Parar se houver erro na compilação
+stop_on_error = true
+# Ativar polling para compatibilidade com Windows
+poll = true
+
+[log]
+# Não mostrar o timestamp no log
+time = false
+
+[color]
+# Cores para os logs
+main = "yellow"
+watcher = "cyan"
+build = "green"
+runner = "magenta"
+
+[misc]
+# Limpar o diretório tmp ao sair
+clean_on_exit = true

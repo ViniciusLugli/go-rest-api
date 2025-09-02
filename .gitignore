@@ -1,0 +1,18 @@
+# Arquivos de ambiente
+.env
+
+# Binários e executáveis
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Arquivos de log
+*.log
+
+# Diretórios de dependências do Go
+vendor/
+
+# Arquivos temporários
+tmp/

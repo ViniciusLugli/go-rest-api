@@ -1,0 +1,19 @@
+FROM golang:1.25-alpine
+
+# Instala o air para hot-reload e o delve para debug
+RUN go install github.com/air-verse/air@latest
+
+WORKDIR /app
+
+# Copia os arquivos de dependência e baixa os módulos
+COPY go.mod go.sum ./
+RUN go mod download
+
+# Copia o restante do código
+COPY . .
+
+# Expõe a porta da aplicação
+EXPOSE 8000
+
+# Inicia a aplicação com air para hot-reload
+CMD ["air"]
